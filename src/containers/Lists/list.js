@@ -20,6 +20,7 @@ class HomePageList extends Component {
     };
   }
 
+  // 重新执行一次数据的获取
   componentWillReceiveProps(nextProps) {
     // console.log(nextProps.match.params.id);
     let url = "http://www.dell-lee.com/react/api/list.json";
