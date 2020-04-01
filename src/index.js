@@ -16,7 +16,7 @@ const { Header, Footer, Content } = Layout;
 class App extends Component {
   render() {
     return (
-      <Layout style={{ minWidth: 1450 }}>
+      <Layout style={{ minWidth: 1450, height: "100%" }}>
         <Header className="header">
           <AppHeader />
         </Header>
@@ -28,7 +28,9 @@ class App extends Component {
             </Switch>
           </BrowserRouter>
         </Content>
-        <Footer className="footer">Footer</Footer>
+        <Footer className="footer">
+          Copyright &copy; {new Date().getFullYear()} EasyVOA
+        </Footer>
       </Layout>
     );
   }
