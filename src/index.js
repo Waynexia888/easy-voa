@@ -4,7 +4,7 @@ import "antd/dist/antd.css";
 import { Layout } from "antd";
 
 import './style.css';
-import AppHeader from './components/headers/index'
+import AppHeader from './components/headers/header'
 
 import { BrowserRouter, Route, Switch } from 'react-router-dom'; // npm install react-router-dom --save
 import { List } from 'antd/lib/form/Form';
@@ -16,22 +16,22 @@ const { Header, Footer, Content } = Layout;
 class App extends Component {
   render() {
     return (
-      <Layout style={{ minWidth: 1450, height: "100%" }}>
-        <Header className="header">
-          <AppHeader />
-        </Header>
-        <Content className="content">
-          <BrowserRouter>
+      <BrowserRouter>
+        <Layout style={{ minWidth: 1450, height: "100%" }}>
+          <Header className="header">
+            <AppHeader />
+          </Header>
+          <Content className="content">
             <Switch>
-              <Route exact path="/" component={HomePageList} />
+              <Route path="/:id?" component={HomePageList} />
               <Route exact path="/detail" component={Detail} />
             </Switch>
-          </BrowserRouter>
-        </Content>
-        <Footer className="footer">
-          Copyright &copy; {new Date().getFullYear()} EasyVOA
-        </Footer>
-      </Layout>
+          </Content>
+          <Footer className="footer">
+            Copyright &copy; {new Date().getFullYear()} EasyVOA
+          </Footer>
+        </Layout>
+      </BrowserRouter>
     );
   }
 }

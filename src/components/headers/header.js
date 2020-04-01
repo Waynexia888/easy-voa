@@ -17,6 +17,8 @@ import {
   DingdingOutlined
 } from "@ant-design/icons";
 
+import { Link } from 'react-router-dom';
+
 
 class AppHeader extends Component {
   constructor(props) {
@@ -51,7 +53,7 @@ class AppHeader extends Component {
         {
           id: 6,
           type: <DesktopOutlined />,
-          title: "VOA Video Programs"
+          title: "Studio Classroom"
         }
       ]
     };
@@ -61,8 +63,10 @@ class AppHeader extends Component {
     return this.state.list.map(item => {
       return (
         <Menu.Item key={item.id}>
-          {item.type}
-          {item.title}
+          <Link to={`/${item.id}`}>
+            {item.type}
+            {item.title}
+          </Link>
         </Menu.Item>
       );
     });
