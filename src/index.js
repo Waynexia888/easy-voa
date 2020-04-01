@@ -7,7 +7,6 @@ import './style.css';
 import AppHeader from './components/headers/header'
 
 import { BrowserRouter, Route, Switch } from 'react-router-dom'; // npm install react-router-dom --save
-import { List } from 'antd/lib/form/Form';
 import HomePageList from './containers/Lists/list';
 import Detail from './containers/Details/detail'
 
@@ -23,8 +22,9 @@ class App extends Component {
           </Header>
           <Content className="content">
             <Switch>
+              <Route path="/detail/:id" component={Detail} />
               <Route path="/:id?" component={HomePageList} />
-              <Route exact path="/detail" component={Detail} />
+              {/* /:id? -> 有？ 代表id可有可无 */}
             </Switch>
           </Content>
           <Footer className="footer">

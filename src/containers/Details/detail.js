@@ -1,13 +1,21 @@
 // rcc
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import { Card } from "antd";
 
 class Detail extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            title: 'title',
+            content: 'content'
+        }
+    }
     render() {
         return (
-            <div>
-               Detail 
-            </div>
-        )
+          <Card title={this.state.title}>
+            <p>{this.state.content}</p>
+          </Card>
+        );
     }
 }
 

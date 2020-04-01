@@ -2,18 +2,13 @@ import React, { Component, Fragment } from 'react';
 import logo from './easyvoa.jpeg';
 import './style.css';
 import { Menu } from "antd";
-import axios from 'axios';  // npm install axios 
+// import axios from 'axios';  // npm install axios 
 import {
-  MailOutlined,
   AppstoreOutlined,
-  SettingOutlined,
   CalendarOutlined,
   MenuUnfoldOutlined,
-  MenuFoldOutlined,
-  PieChartOutlined,
   DesktopOutlined,
   ShareAltOutlined,
-  IdcardOutlined,
   DingdingOutlined
 } from "@ant-design/icons";
 
@@ -85,7 +80,9 @@ class AppHeader extends Component {
   render() {
     return (
       <Fragment>
-        <img src={logo} className="app-header-logo" />
+        <Link to='/'>
+          <img src={logo} className="app-header-logo" alt=""/>
+        </Link>
         <Menu mode="horizontal" className="app-header-menu">
           {/* <Menu.Item key="mail">
                     <MailOutlined />
