@@ -11,7 +11,7 @@ const { Header, Footer, Content } = Layout;
 class App extends Component {
   render() {
     return (
-      <Layout style={{ minWidth: 1300 }}>
+      <Layout style={{ minWidth: 1450 }}>
         <Header className="header">
           <AppHeader />
         </Header>
