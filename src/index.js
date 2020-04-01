@@ -6,6 +6,11 @@ import { Layout } from "antd";
 import './style.css';
 import AppHeader from './components/headers/index'
 
+import { BrowserRouter, Route, Switch } from 'react-router-dom'; // npm install react-router-dom --save
+import { List } from 'antd/lib/form/Form';
+import HomePageList from './containers/Lists/list';
+import Detail from './containers/Details/detail'
+
 const { Header, Footer, Content } = Layout;
 
 class App extends Component {
@@ -15,7 +20,14 @@ class App extends Component {
         <Header className="header">
           <AppHeader />
         </Header>
-        <Content className="content">Content</Content>
+        <Content className="content">
+          <BrowserRouter>
+            <Switch>
+              <Route exact path="/" component={HomePageList} />
+              <Route exact path="/detail" component={Detail} />
+            </Switch>
+          </BrowserRouter>
+        </Content>
         <Footer className="footer">Footer</Footer>
       </Layout>
     );
